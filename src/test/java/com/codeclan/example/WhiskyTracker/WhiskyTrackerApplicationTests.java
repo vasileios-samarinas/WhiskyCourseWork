@@ -40,4 +40,11 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals(3,foundDistilleries.size());
 	}
 
+	@Test
+	public void canFindWhiskiesByDistilleryNameAndAge(){
+		List<Whisky> foundWhiskies = whiskyRepository.findByDistilleryIdAndAge(1L,15);
+		assertEquals(1,foundWhiskies.size());
+		assertEquals("The Glendronach Revival",foundWhiskies.get(0).getName());
+	}
+
 }
